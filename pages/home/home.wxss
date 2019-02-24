@@ -1,0 +1,42 @@
+/* pages/home/home.wxss */
+page{height:100%;background: rgb(248, 242, 242);}
+.searchWrap{
+  position: relative;
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchWrap .search{
+  background: rgb(240, 231, 231);
+  width: 96%;
+  height: 66rpx;
+  margin: 0 auto;
+  border-radius: 29rpx;
+  padding: 0 78rpx;
+  box-sizing: border-box;
+}
+.icon_search{
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  left:44rpx;
+  top: 32rpx;
+}
+
+.aboutUs image{
+  width: 100%;
+  height: 80rpx;
+}
+
+.goTop .toTop{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  position: fixed;
+  right: 20rpx;
+  bottom: 50rpx;
+  z-index: 2001;
+  background: #fff;
+}

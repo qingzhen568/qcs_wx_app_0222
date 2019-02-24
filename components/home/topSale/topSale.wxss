@@ -1,0 +1,6 @@
+/* components/home/topSale/topSale.wxss */
+image{width: 100%;height: 960rpx;}
+.topSaleWrap{
+  /* border-bottom: 2rpx solid #eee; */
+  background: #fff;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "swiperdiscover":"/components/commons/swiper/swiper"
+
+  }
+}

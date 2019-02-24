@@ -1,0 +1,29 @@
+<!--components/home/SecKill/SecKill.wxml-->
+<view class="SecKill">
+  <view class="SecKill_title">
+    <view class='SecKill_time_wrap'>
+      <text class="title">今日秒杀</text>
+      <view class="timeStampWrap">
+        <text class='timeStamp'>{{countDownData[0]}}</text>:
+        <text class='timeStamp'>{{countDownData[1]}}</text>:
+        <text class='timeStamp'>{{countDownData[2]}}</text> 
+      </view>
+    </view>
+    <view class='SecKill_more'>
+      <text class='txt'>更多好货</text>
+      <image src='../../../images/右箭头1.png'></image>
+    </view>
+  </view> 
+  <view class="goodsWrap">
+    <view wx:for="{{secKillData}}" wx:key="{{index}}" class="SecKillList">
+      <view class="SecKillItem">
+        <image src="{{item.image_url}}" alt="{{item.item_id}}"></image> 
+        <view class="SecKill_itemName">{{item.item_short_name}}</view>
+        <view class='priceWrap'>
+          <text class="promotion_price">￥{{item.promotion_price/100}}</text>
+          <text class="market_price">￥{{item.market_price/100}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

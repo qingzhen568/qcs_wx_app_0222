@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/goodsDetail/goodsDetail",
+    "pages/member/member",
+    "pages/home/home",
+    "pages/discover/discover",
+    "pages/profile/profile",
+    "pages/cart/cart",
+    "components/home/goodsList/goodsList",
+    "components/home/topSale/topSale",
+    "pages/themeList/themeList"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "屈臣氏官方商城",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/首页白.png",
+        "selectedIconPath": "images/首页绿.png"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "text": "会员中心",
+        "iconPath": "images/会员中心白.png",
+        "selectedIconPath": "images/会员中心绿.png"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "images/发现白.png",
+        "selectedIconPath": "images/发现黄.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/购物车白.png",
+        "selectedIconPath": "images/购物车绿.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/个人中心白.png",
+        "selectedIconPath": "images/个人中心绿.png"
+      }
+    ]
+  }
+}

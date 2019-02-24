@@ -1,0 +1,7 @@
+<!--components/home/starBrand/starBrand.wxml-->
+<!-- 数据：第七条 品牌墙 -->
+ <!-- https://h5.watsons.com.cn/topic/data/T20190220103914589?device_id=40323390-37de-11e9-8b08-4bd8f74a51eb -->
+<view>
+  <image src=''></image>
+ 
+</view>

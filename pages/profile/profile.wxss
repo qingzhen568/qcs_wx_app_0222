@@ -1,0 +1,32 @@
+/* pages/profile/profile.wxss */
+image{width: 40rpx; height: 30rpx;}
+.commonMenu_item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80rpx;
+  width: 100%;
+  padding: 0 68rpx;
+  box-sizing: border-box;
+  margin-bottom: 24rpx;
+  font-size: 24rpx; 
+}
+.commonMenu_item_left{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.commonMenu_item_left .commonMenu_Img_icon{
+  margin-right: 48rpx;
+}
+
+.rightArrow_icon{
+  width: 40rpx; height: 40rpx;
+}
+.bottom_line{
+  width: 92%;
+  margin: 0 auto;
+  padding: 0 68rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #eee;
+}

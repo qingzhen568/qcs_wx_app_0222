@@ -1,0 +1,18 @@
+<!--components/home/topNav/topNav.wxml-->
+<view class="TopNav">
+    <view class="aboutUs">
+      <image src="https://image.watsons.com.cn//upload/8e50f2e3.png" alt="营业信息" ></image>
+    </view>
+    <!-- 四格导航栏 -->
+    <view class="fourNavGif_list" >
+        <view  class="fourGifWrap_item"  wx:for="{{fourNavGif}}" wx:key="{{item.image_url}}">
+            <image src="{{item.image_url}}" alt="{{item.gmt_modified}}"></image>
+        </view>
+    </view>
+    <!-- 新人专享 -->
+    <view>
+      <image class='luckyMoney' src="https://image.watsons.com.cn//upload/9e054016.jpg" ></image>
+    </view>
+    <!-- 新人红包 -->
+    <image class='newMemberMoney' src="https://image.watsons.com.cn//upload/5acf6066.jpg" ></image>
+</view>

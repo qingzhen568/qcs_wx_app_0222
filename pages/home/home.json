@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "myswiper":"/components/commons/swiper/swiper", 
+    "topnavbar":"/components/home/topNav/topNav", 
+    "seckill":"/components/home/SecKill/SecKill",
+    "topsale":"/components/home/topSale/topSale",
+    "goodslist":"/components/home/goodsList/goodsList",
+    "recommend":"/components/home/recommend/recommend",
+    "starbrand":"/components/home/starBrand/starBrand"
+  }
+}

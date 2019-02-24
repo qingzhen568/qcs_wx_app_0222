@@ -1,0 +1,34 @@
+<!--pages/themeList/themeList.wxml-->
+<text>pages/themeList/themeList.wxml</text>
+
+<block>
+  <view class='swiper_item'>
+    <view class="Item" wx:for="{{vipTopSaleData}}" wx:key="{{item.over_image_url}}">
+      <view class='item_imgWrap'>
+        <image src="{{item.over_image_url}}" alt="{{item.brand_name}}"></image>
+        <view class='item_promotion'>
+          <text class='item_promotion_1' wx:if="{{item.promotions[0]}}">{{item.promotions[0]}}</text>
+          <text class='item_promotion_2' wx:if="{{item.promotions[1]}}">{{item.promotions[1]}}</text>
+        </view>
+      </view>
+      <!-- 产品信息 -->
+      <view class='item_info_Wrap'>
+        <view class='sale_point'>
+          {{item.sale_point}}
+        </view>
+        <view class="ItemName">
+          {{item.item_short_name}}
+        </view>
+        <view class="ItemFooter">
+          <view class="ItemPrice">
+            <text class="min_app_price">￥{{item.min_app_price/100}}</text>
+            <text class='vip_info'>会员</text>
+            <text class="min_market_price" wx:if="{{item.min_market_price}}">￥{{item.min_market_price/100}}</text>
+          </view>
+          <image class='cart_icon' src='../../images/红色购物车.png'></image>
+        </view>
+        <view class='specials_activities'>{{item.specials}}</view>
+      </view>
+    </view>
+  </view>
+</block>

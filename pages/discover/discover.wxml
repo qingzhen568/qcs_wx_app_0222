@@ -1,0 +1,5 @@
+<!--pages/discover/discover.wxml-->
+
+<view>
+  <swiperdiscover swiperArr="{{swiperdiscoverData}}"></swiperdiscover>
+</view>

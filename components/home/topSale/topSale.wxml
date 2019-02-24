@@ -1,0 +1,5 @@
+<!--components/home/topSale/topSale.wxml-->
+
+<view class='topSaleWrap'>
+  <image src='https://image.watsons.com.cn//upload/7709994b.jpg'></image>
+</view>

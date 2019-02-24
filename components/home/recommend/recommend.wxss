@@ -1,0 +1,6 @@
+/* components/home/recommend/recommend.wxss */
+image{width: 100%;}
+.title_img{
+  height: 176rpx;
+}
+.recommendItem image{height: 400rpx;}

@@ -1,0 +1,22 @@
+/* components/home/topNav/topNav.wxss */
+.TopNav{background: #fff;}
+image{
+  width: 100%;
+}
+.aboutUs image{
+  height: 100rpx;
+}
+.fourNavGif_list{
+  width: 100%;
+  height: 180rpx;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.fourGifWrap_item{width: 25%;}
+.fourGifWrap_item>image{width: 100%;height: 100%;}
+.luckyMoney{
+  height: 320rpx;
+}
+.newMemberMoney{
+  height: 160rpx;
+}

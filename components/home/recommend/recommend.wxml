@@ -1,0 +1,9 @@
+<!--components/home/recommend/recommend.wxml-->
+<view class="recommendWrap">
+  <image class='title_img' src="{{recommend_titleImg}}" alt="大牌精选 好货推荐" ></image> 
+  <view id="recommend">
+    <view class="recommendItem" wx:for="{{recommendData}}" wx:key="{{item.image_url}}">
+      <image src="{{item.image_url}}" alt="{{item.topic_id}}"></image> 
+    </view>
+  </view>
+</view>

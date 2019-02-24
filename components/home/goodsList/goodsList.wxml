@@ -1,0 +1,30 @@
+<!--components/home/goodsList/goodsList.wxml-->
+<!-- <text>components/home/goodsList/goodsList.wxml</text> -->
+<view class="GoodsList">
+  <image class='home_imgSrc' src="{{home_imgSrc}}" alt="{{img_alt}}" style="height:{{imgHeight}}  "></image>
+  <block>
+    <view class="List">
+      <view class="Item" wx:if="{{index<9}}" wx:for="{{goodsListData}}" wx:key="{{item.over_image_url}}">
+        <!--图片信息 -->
+        <view class='item_imgWrap'>
+          <image src="{{item.over_image_url}}" alt="{{item.brand_name}}"></image>
+          <view class='item_promotion'>
+            <text class='item_promotion_1' wx:if="{{item.promotions[0]}}">{{item.promotions[0]}}</text>
+            <text class='item_promotion_2' wx:if="{{item.promotions[1]}}">{{item.promotions[1]}}</text>
+          </view>
+        </view>
+        <!-- 产品信息 -->
+          <view class="ItemName">
+            {{item.item_short_name}}
+          </view>
+          <view class="ItemFooter">
+            <view class="ItemPrice">
+              <text class="min_app_price">￥{{item.min_app_price/100}}</text>
+              <s class="min_market_price" wx:if="{{item.min_market_price}}">￥{{item.min_market_price/100}}</s>
+            </view>
+            <image class='cart_icon' src='../../../images/红色购物车.png'></image>
+          </view>
+      </view>
+    </view>
+  </block>
+</view>

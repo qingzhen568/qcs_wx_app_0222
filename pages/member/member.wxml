@@ -1,0 +1,127 @@
+<!--pages/member/member.wxml-->
+<scroll-view scroll-y style="height:100%"  scroll-top='{{topNum}}' bindscroll="scrollToTop"
+scroll-with-animation>
+
+<view class='vipTitle'>
+  <view class='openVipWrap'>
+    <image  src='https://asset.watsons.com.cn/act-static/2018/0319_membercard_bonus/a65e1269a743dfeb8b674fb573728271.png' class='openVip'> </image>
+    </view>
+  <view class='vipRightWrap'>
+    <image src='https://asset.watsons.com.cn/act-static/2018/0319_membercard_bonus/df97fd89cd6444ec8fad859df2e97b33.png' class='vipRight'></image>
+   </view>
+</view>
+
+<view class='topTabSwiper'>
+  <view class='tab  {{currentTabIndex == 0 ? "active" : ""}}' data-current="0" bindtap='checkCurrent'>会员爆款</view>
+  <view class='tab  {{currentTabIndex == 1 ? "active" : ""}}' data-current="1" bindtap='checkCurrent'>会员三折起</view>
+  <view class='tab  {{currentTabIndex == 2 ? "active" : ""}}' data-current="2" bindtap='checkCurrent'>更多会员价</view>
+</view>
+<swiper current="{{currentTabIndex}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+
+<!-- 会员爆款 -->
+  <swiper-item>
+    <block>
+      <view class='swiper_item'>
+          <view class="Item" wx:for="{{vipTopSaleData}}" wx:key="{{item.over_image_url}}">
+              <view class='item_imgWrap'>
+                <image src="{{item.over_image_url}}" alt="{{item.brand_name}}"></image>
+                <view class='item_promotion'>
+                  <text class='item_promotion_1' wx:if="{{item.promotions[0]}}">{{item.promotions[0]}}</text>
+                  <text  class='item_promotion_2' wx:if="{{item.promotions[1]}}">{{item.promotions[1]}}</text>
+                </view>
+              </view>
+              <!-- 产品信息 -->
+              <view class='item_info_Wrap'>
+                <view class='sale_point'>
+                  {{item.sale_point}}
+                </view>
+                <view class="ItemName">
+                  {{item.item_short_name}}
+                </view>
+                <view class="ItemFooter">
+                  <view class="ItemPrice">
+                    <text class="min_app_price">￥{{item.min_app_price/100}}</text>
+                    <text class='vip_info'>会员</text>
+                    <text class="min_market_price" wx:if="{{item.min_market_price}}">￥{{item.min_market_price/100}}</text>
+                  </view>
+                  <image class='cart_icon' src='../../images/红色购物车.png'></image>
+                </view>
+                <view class='specials_activities'>{{item.specials}}</view>
+              </view>
+          </view>
+      </view>
+    </block>
+  </swiper-item>
+
+<!-- 会员三折起 -->
+ <swiper-item>
+    <block>
+      <view class='swiper_item'>
+          <view class="Item" wx:for="{{saleOffData}}" wx:key="{{item.over_image_url}}">
+              <view class='item_imgWrap'>
+                <image src="{{item.over_image_url}}" alt="{{item.brand_name}}"></image>
+                <view class='item_promotion'>
+                  <text class='item_promotion_1'>{{item.promotions[0]}}</text>
+                  <text  class='item_promotion_2' wx:if="{{item.promotions[1]}}">{{item.promotions[1]}}</text>
+                </view>
+              </view>
+              <view class='item_info_Wrap'>
+                <view class='sale_point'>
+                  {{item.sale_point}}
+                </view>
+                <view class="ItemName">
+                  {{item.item_short_name}}
+                </view>
+                <view class="ItemFooter">
+                  <view class="ItemPrice">
+                    <text class="min_app_price">￥{{item.min_app_price/100}}</text>
+                    <text class='vip_info'>会员</text>
+                    <text class="min_market_price" wx:if="{{item.min_market_price}}">￥{{item.min_market_price/100}}</text>
+                  </view>
+                  <image class='cart_icon' src='../../images/红色购物车.png'></image>
+                </view>
+                <view class='specials_activities'>{{item.specials}}</view>
+              </view>
+          </view>
+      </view>
+    </block>
+  </swiper-item>
+
+
+  <!-- 更多会员价 -->
+   <swiper-item>
+    <block>
+      <view class='swiper_item'>
+          <view class="Item" wx:for="{{saleOffData}}" wx:key="{{item.over_image_url}}">
+              <view class='item_imgWrap'>
+                <image src="{{item.over_image_url}}" alt="{{item.brand_name}}"></image>
+                <view class='item_promotion'>
+                  <text class='item_promotion_1'>{{item.promotions[0]}}</text>
+                  <text  class='item_promotion_2' wx:if="{{item.promotions[1]}}">{{item.promotions[1]}}</text>
+                </view>
+              </view>
+              <view class='item_info_Wrap'>
+                <view class='sale_point'>
+                  {{item.sale_point}}
+                </view>
+                <view class="ItemName">
+                  {{item.item_short_name}}
+                </view>
+                <view class="ItemFooter">
+                  <view class="ItemPrice">
+                    <text class="min_app_price">￥{{item.min_app_price/100}}</text>
+                    <text class='vip_info'>会员</text>
+                    <text class="min_market_price" wx:if="{{item.min_market_price}}">￥{{item.min_market_price/100}}</text>
+                  </view>
+                  <image class='cart_icon' src='../../images/红色购物车.png'></image>
+                </view>
+                <view class='specials_activities'>{{item.specials}}</view>
+              </view>
+          </view>
+      </view>
+    </block>
+  </swiper-item>
+
+</swiper>
+
+</scroll-view>

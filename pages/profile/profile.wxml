@@ -1,0 +1,24 @@
+<!--pages/profile/profile.wxml-->
+
+<view class='profile'>
+  <block wx:for="{{orderMenuArr}}" wx:key="{{item.id}}">
+    <view class='commonMenu_item'>
+      <view class='commonMenu_item_left'>
+        <image class='commonMenu_Img_icon' src="{{item.imgUrl}}"></image>
+        <text class='commonMenu_name'>{{item.name}}</text>
+      </view>
+      <image class='rightArrow_icon' src="../../images/右箭头1.png"></image>
+    </view>
+  </block>
+  <view class='bottom_line'></view>
+  <block wx:for="{{commonMenuArr}}" wx:key="{{item.id}}">
+    <view class='commonMenu_item'>
+      <view class='commonMenu_item_left'>
+        <image class='commonMenu_Img_icon' src="{{item.imgUrl}}"></image>
+        <text class='commonMenu_name'>{{item.name}}</text>
+      </view>
+      <image class='rightArrow_icon' src="../../images/右箭头1.png"></image>
+    </view>
+  </block>
+</view>
+

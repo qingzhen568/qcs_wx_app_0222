@@ -1,0 +1,50 @@
+<!--pages/home/home.wxml-->
+<scroll-view scroll-y style="height:100%"  scroll-top='{{topNum}}' bindscroll="scrollToTop"
+scroll-with-animation
+>
+<view>
+  <view class='searchWrap'>
+    <input class='search' type='text' placeholder='面膜' disabled />
+    <image class='icon_search' src='../../images/搜索图标.png'></image>
+  </view>
+  <!-- 轮播图 -->
+  <myswiper swiperArr="{{swiperArr}}"></myswiper>
+  <!-- 顶部信息导航|新人红包等 -->
+  <topnavbar fourNavGif="{{fourNavGif}}" ></topnavbar>
+  <!-- 今日秒杀组件 -->
+  <seckill secKillData="{{secKillData}}" countDownData="{{countDownData}}"></seckill>
+  <!-- TOP爆款热销榜 -->
+  <topsale></topsale>
+  <!-- 商品组列表 #1st.TopSale 24Hours热卖爆款 -->
+  <goodslist goodsListData="{{topSaleData}}" home_imgSrc="https://image.watsons.com.cn//upload/09f9331d.jpg" img_alt="热销爆款" imgHeight="120rpx" listBG="#FFDDDC" ></goodslist>
+  <!-- 明星大牌 -->
+  <!-- <starbrand></starbrand> -->
+  <!-- 商品组列表 2nd.护肤 -->
+  <!-- <view>
+    <image src='https://image.watsons.com.cn//upload/6bb6f88e.jpg' style='height：120rpx'></image>
+  </view> -->
+  <goodslist goodsListData="{{skinCareData}}" home_imgSrc="https://image.watsons.com.cn//upload/ae8d83fd.jpg" img_alt="人气护肤"  ></goodslist>
+
+   <!-- 商品组列表 3rd.面膜 -->
+  <goodslist goodsListData="{{maskData}}" home_imgSrc="https://image.watsons.com.cn//upload/054c3cd0.jpg" img_alt="面膜列表"  ></goodslist>
+
+   <!-- 商品组列表 4th.个护生活 -->
+  <goodslist goodsListData="{{personalLifeData}}" home_imgSrc="https://image.watsons.com.cn//upload/18da582e.jpg" img_alt="个护生活" ></goodslist>
+
+    <!--商品组列表 5th. makeUpData 美妆-->
+    <goodslist goodsListData="{{makeUpData}}" home_imgSrc="https://image.watsons.com.cn//upload/6b6fbd4d.jpg" img_alt="美妆列表"  ></goodslist>
+
+    <!--商品组列表 6th. fashionLifeData 居家生活-->
+    <goodslist goodsListData="{{makeUpData}}" home_imgSrc="https://image.watsons.com.cn//upload/298bbb90.jpg" img_alt="居家生活" ></goodslist>
+   
+   
+     <!-- 大牌精选 好货推荐 -->
+     <recommend recommendData="{{recommendData}}" recommend_titleImg="https://image.watsons.com.cn//upload/8c3676f5.jpg"></recommend>
+     
+     <!-- 回到顶部按钮 -->
+     <!-- <totop></totop> -->
+</view>
+</scroll-view>
+<view class="goTop" hidden='{{!floorstatus}}' bindtap="goTop">
+    <image class='toTop' src='../../images/回到顶部.png'></image>
+</view>

@@ -1,0 +1,166 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<text>pages/goodsDetail/goodsDetail.wxml</text>
+
+<view id="Item">
+  <!-- {{/* 引入头部标题 */}} -->
+ 
+  <view class="section">
+    <!-- {{/* 主图栏 */}} -->
+    <view class="mainImg">
+      <image  src="{{item.over_image_url}}" alt="{{item.item_name}}"></image>
+      <view class="mainImg_list">
+        <view>开箱</view>
+        <view>体验</view>
+        <view>图片</view>
+      </view>
+    </view>
+    <!-- {{/* 商品信息栏 */}} -->
+    <view class="goods_info_wrap">
+      <view class="goods_info">
+        <view class="sale_point">{{item.sale_point}}</view>
+        <view class="item_long_name">{{item.item_name}}</view>
+        <view class="price_list">
+          <view class="app_priceWrap">
+            <text>￥</text>
+            <text class="app_price">{{item.app_price/100}}</text>
+          </view>
+       
+          <view class="market_priceWrap" wx:if="{{item.market_price}}">
+            <text>￥</text>
+            <text class="market_price">{{item.market_price/100}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="label_list_wrap">
+        <view class="label_list">
+          <!-- {{ item.slogenList.map((item)=> -->
+          <view wx:key="{{item.title}}">
+            <image src="{{item.icon}}" alt="{{item.title}}"></image> &nbsp;
+            <view>{{item.title}}</view>
+          </view>) }}
+        </view>
+      </view>
+    </view>
+    <!-- {{/* 优惠券栏 */}} -->
+    <view class="coupon_wrap">
+      <view class="couponTitle">{{item.couponTitle}}</view>
+      <!-- {{ item.couponData.map((item,index)=>{{return index<=2? -->
+      <view class="coupon_main" wx:key="{{index}}">
+        <view>{{item.coupon_name}}</view>
+        </view>
+        <view class="arrowRight">
+          <Icon type="right" />
+        </view>
+    </view>
+
+    <!-- {{/* 商品参与的活动列表 */}} -->
+    <view class="activity_wrap">
+      <view class="activity_list">
+        <!-- {{/* style={{item.activity_brief_name?{{'display':'block'}}:{{'display':'none'}}}} */}} {{/* 还差一个点击事件显示更多 */}} -->
+        <view class="activity marketActivity ">
+          <view>{{item.activity_brief}}</view>
+          <view>{{item.activity_name}}</view>
+          <view class="moreActivity">凑单
+            <Icon type="right" />
+          </view>
+        </view>
+        <view class="activity memberRight">
+          <view>会员特权</view>
+          <view>购卡后两个月内享2次满150减20特权</view>
+        </view>
+        <view class="activity freeDelivery">
+          <view>全场包邮</view>
+          <view>买满68元包邮</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- {{/* 配送服务 */}} -->
+    <view class="deliveries_wrap">
+      <view class="deliveries_title">配送服务</view>
+      <view class="deliveries">
+        <view class="delivery">
+          <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAYAAACQ0cTtAAAAAXNSR0IArs4c6QAABMpJREFUSA2dVn1oW1UUP+elabvUohW2tVHUbn/MgWNT3FTwa4ofndDphCEOLEWWJl0yrNWqDEfEIX7iyEebxg1xDtFu6iq6TDrUggX3n1YFRcHApHMO7bq51prkHX/3vrzyXpamHxfeux/nd87v3HPvPfcyzaNIoP9S4v/uJ+JVJOQnksuJ6Qy+MRJjlJp8Qxxt/3cuU1wJIMH4nTD+LL67QOCtgL0AR46Sx7OH+zpHZ8OVJZNg3zVk5hMgeEArMuVRD+Mb0bMx+W8YX0YsV1iO0AZgGTIT1bsg7QLpeCnpRWQSit1GBfoQwKUwOIH6ZSj3l1O2jUk47qecdKO/A+Q1IP0FpK2cjvxkY1TtIkPY7iNTPsF4NUSfkZfbOBn+y6lQqQ3SZsrRAIncqB01qm7lVOgHW2eGTEK9q6hQOIFwYDPQXmqKdHOUTRs431q6BpbQ5OmDINwCwt/g8HrbYUMZkYEBD4gOWUT8Affv7FoMkbLFb26douqVj8Lhb2CvmfLmfjWuiiajL/5sg2ANoL+Sb3m7JVr8n+ObpklqtoDwHNZws94HikzPyjRf0KYN3qU9WwSPRMWQQOxp6Ug8o9Q53XGKmF/Vpkzeo8cgvJ3EHIYXP1MqspqZRQMW+JOOeAzrFNFqhrcZGyMrTx2oo3NnT4Pahy13JcJobtYA4Y8XTRSIdc8QEX2piJRNfv2xC5jd51gixi5tNRDTmzWZQRhceJFgYivMvmZp8o/kq8cudBSWY7oHHgPhQ65TpSqrK8dPgrENyIs+x5CrWVyCA9pz4jGqMlp4b/tZN8jI6j54MDNu1J3G2j+cIKxBEMnnBBLw9ziDK5wy1ZbO5Gr8j+iMQXQeqWsT9+44WYpDeC27Qo1YM5nUgImCewbMv+txkRVUyH8tgTiOhlVA1Ijzk4GhBoQwR2w8jLP5nS1319gcVplUYRzT7alcMZyWhFPhT3EyOiFXWaQJ9TDCdguILkECOAonry4it3N/eMhql/kbxWUCD2bGWQ2R/LpSKKfDffB6m/ZezULMIczoOEJ3vYXl3cC8U6rn6otp2RXKgowyllCsI+BCgiYVfp88BBmrcNdhRjcVIfuQ1V8sgZfpsmWXOWNQda3K8rBBLbjHlpVBE/dFMkhs90JW3GmcIf+aUDmscwwhX4d1XQtHJ3D3fmVwfDs2Ah8BqI4kt9sJdrY5FRkhqlmLQ/oI+Zc/yNGN6kKtXPKFVzSAOY30ldNXDHbatRhU946JGWy0DFe2M5dUgsltZBYOwrlxMjwr1eWr1gxJU9+obyCWXoTzIxzkq+YyVkmO8K0n09ynMcI99i2vyfSgP/wctvcxxBjrNj0igcQNlQzOJpNQvAVH4zgcr4W9JHarRQoFHUZbUT/ZaHoQ/Tsgwu6TKPnr4/N5pskTb19GU//sgs6TiI46Uu+R/7o259q6yBQpCL1IUQnMMKCdYD4J5bfw6BlEOEb1WPGn7jA6lVRH4SGcwcdRq/ckXlj0PKd3vuTEqvZFZDYA2eJuEOLyE2c4kQN1xhmHwaVo+1EvsXWwGYbIY/QgR347M+ZozEqmMCK4hzp67yE24Tm1YsSV0iw7eEoQD4LkMGaOd8fspSJZqZr07K+n89OKsIEKnjNU1zC2kGfE/wg4wzvgfWe5AAAAAElFTkSuQmCC"
+            alt="同意" />
+          <view class="delivery_text">快递配送</view>
+          <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAA6NJREFUWAnNWN1OE0EUnp3+ULpAiYAUIkpQwqUxPoRifAG89RE03hi50Hhj9DHUFzBWH8IYLwnaiIHaCobSX9LSXc833d3Mbnf2zxI9yXZnz5yfb87MnDlTjcWgarWqtxuNW4Zp3mGmeZVUl016YEJjrEKvCtO0b1zT3uszMx+LxWIbfVGI9MNpd3f3hmkYT0h40zTNXLgGAdO0UwJZ0jh/tr6+/jlMJxBIuVy+Muj1npPVewQgUFbliACZFL03qWz28dra2p5STtXxdWdnk0b0lgAUVDJx+ATohEaydW1jo+Snx/2YBOIBgXg3LhDwAVuwCdt+PkfCDUFajC/9hMfFo8X8kCLzSrbnAmJNByLhGylZ8W/aNE0GOb4rT5MDRCzMfv/LOKcjCCzWTCqTuW4vYGfk2B1xQUxMTLCp6WlWmJ1leV1nqVQqyLerD77EjrS4IiLIE8wwPlGnEyGXlucjNznJLi4uMgCRyTAMVj8+Zr+PjmS2si22Nuc3kWeGETGM7TggLq2sOCDgHA+Ic84uzM2x+YUFpXO5Az6RKMHTkLabJydHxAzNmDQCdnl1lWWzWeG8Vq2yVrMpAOhTUyJKAAP6Xi6zfr8v2kE/ZPN0ulCY5zg7ooCAMUwFQIA67bYAgTYi0mw0WKvVwqegXC50XEIOvoGBiwPMUg572SAg1+l0RsRPJV4qnR7pVzGAIW2doioZF79NUfixtyd4/V7P1YcPnXaQTVGmxZYFBsAWx7jDDGgMBgOGx4+wRvL5vOg6OzsTU+cnp+Atpyn/RwaiMCJySXFpCUc/zhT2q1YTb5W8lw8M0SfSq21965TIbBBYtD8PDnzXj0LdYXPKYKisEhEisChForK/nwgEMGDTJwaCDGun9Xq9zrrdbqIBAQNHjZlUW07xXWnrxrZHGNIodAemeT+2Mik0KavaAHo+2zmqTWDgqLaRZqMqeeVw6mY9h59XJugbvoGBWyX/hyBhVR/pigMOu2amkKy0pa1bAobhCcX5U0JGvHiUyWQcBbntMEMa8InrBsQEEHHvoJI/RG+k+/DwkGFt4NzBrolN5NO+89AWHtJ/UyqidiRUWxSuYZVjIzyHN3zAl12vwsVwjVjOUFWTwKNz8O0yCR9yBY9O4o2SdcF6QQeYC+ioZDyOFQmAcN1pYMUXCDqsO86/vXICCEKHewchfY1tBl4Sgi5swJZ3OmR7yojIQtZ1Y5t4t6PWtwRgfH9LyGDQPs8/av4ADpmfBI1PiscAAAAASUVORK5CYII="
+            alt="疑问" ></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- {{/* 小编说 */}} -->
+    <view class="brief_wrap">
+      <view class="brief_title">笋编说</view>
+      <view class="desc_content">
+        
+        <view class="content">小编用一囤三的好货！cosme上的常客，深受好评！性价比杠杠的。用前摇一摇倒在化妆棉后轻敷眼部，平时难卸的防水眼线液和睫毛膏都能卸的干干净净。</view>
+        
+      </view>
+    </view>
+
+    <!-- {{/* 品牌介绍 */}} 
+    <view class="brand_wrap">
+      <view class="brand">品牌</view>
+      <view class="desc_content">
+        <view class="brand_logo">
+          <img class="" src="" alt="左号" />
+        </view>
+        <view class="brand_info">
+          <view class="brand_name"></view>
+          <view class="brand_intro"></view>
+        </view>
+      </view>
+    </view>  -->
+     <!-- {{/* 用户评论 */}} -->
+    <view class="comment_wrap"></view>
+
+    <!-- {{/* 搜索栏的热搜词url: https://h5.watsons.com.cn/search/hotWord */}} {{/* 为您推荐左侧滑动*/}} -->
+    <view class="recommend_wrap">
+      <view class="recommend_title">为你推荐</view>
+      <view class="goodsWrap">
+      
+        <view wx:key="{{index}}" class="ScrollXList">
+          <view class="ScrollXItem">
+            <img src="{{item.over_image_url}}" alt="{{item.item_short_name}}" />
+            <view class="ScrollX_itemName">{{item.item_short_name}}</view>
+            <view>
+              <text class="app_price">￥{{item.min_app_price/100}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+    <!-- {{/* 商品详情页 */}} -->
+    <view class="sku_detail">
+      <!-- {{ item.sku_detailData.map((item,index)=> -->
+      <view wx:key="{{index}}">
+        <image src="{{item}}" alt="{{item}}"></image>  />
+      </view>
+    </view>
+  </view>
+
+
+  <!-- {{/* #addToCart_5th 给购物车图标添加显示购物车数量的微标Badge 并将数据传传过去*/}} -->
+  <view id="homeCouponCart">
+    <text class="backHome" bindtap="{{backHome}}"></text>
+
+  <!-- 给购物车添加微章 -->
+   
+    <!-- <Badge count={{item.total}}> -->
+      <Badge count="{{item.cartTotalNum}}">
+        <text class="shoppingCart"></text>
+      </Badge>
+    
+  </view>
+
+  <view class="cartOrBuy">
+    <!-- {{/* #addToCart_1st. 添加加入购物车事件*/}} -->
+    <view bindtap="{{addToCart}}">加入购物车</view>
+    <view>立即购买</view>
+  </view>
+  <!-- #addToCart_4th_a. 点击加入购物车后,显示 添加成功 的提示  -->
+  <view wx:if="{{item.isAddToCart}}" class="isAddToCart">添加成功</view>
+</view>
